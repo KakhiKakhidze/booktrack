@@ -1,10 +1,16 @@
-// For React Native, use your computer's IP address instead of localhost
+// API Configuration
+// For React Native mobile devices, use your computer's IP address instead of localhost
 // Find your IP: Windows: ipconfig | Linux/Mac: ifconfig
 // Example: 'http://192.168.1.100:3000/api'
+
+// TODO: After deploying to Render, update PRODUCTION_API_URL with your Render app URL
+// Example: 'https://booktrack-api.onrender.com/api'
+const PRODUCTION_API_URL = 'https://your-render-app.onrender.com/api';
+
 const API_BASE_URL = __DEV__ 
   ? 'http://localhost:3000/api'  // Development (works for web)
-  // ? 'http://192.168.1.XXX:3000/api'  // Use your computer's IP for mobile devices
-  : 'https://your-api-domain.com/api';  // Production
+  // ? 'http://192.168.1.XXX:3000/api'  // Use your computer's IP for mobile devices in dev
+  : PRODUCTION_API_URL;  // Production (update after Render deployment)
 
 class ApiService {
   async request(endpoint, options = {}) {

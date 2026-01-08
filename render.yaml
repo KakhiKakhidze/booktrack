@@ -2,8 +2,11 @@ services:
   - type: web
     name: booktrack-api
     env: node
-    buildCommand: cd server && npm install
-    startCommand: cd server && npm start
+    plan: free
+    region: oregon
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -13,4 +16,6 @@ services:
         sync: false  # Set this in Render dashboard
       - key: DB_NAME
         value: bookDB
+      - key: NODE_VERSION
+        value: 18.20.0
 

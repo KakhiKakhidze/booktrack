@@ -1,0 +1,14 @@
+# Exclude React Native app from deployment
+# Render should only deploy server/ directory
+
+App.js
+app.json
+babel.config.js
+screens/
+services/
+node_modules/
+.expo/
+.expo-shared/
+*.md
+!server/README.md
+
